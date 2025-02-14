@@ -24,7 +24,7 @@ then
 	echo "No config file found.  Copying example config file to"
 	echo $HOME/.config/FreeDATA/config.ini
 	echo "*************************************************************************"
-	cp config.ini.example $HOME/.config/FreeDATA/config.ini
+	cp /opt/FreeDATA/freedata_server/config.ini.example $HOME/.config/FreeDATA/config.ini
 fi
 
 # Run server
