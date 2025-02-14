@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="FreeDATA is a versatile, open-source platform designed specifically for HF communications, leveraging Codec2 data modes for robust global digital communication. It features a network-based server-client architecture, a REST API, multi-platform compatibility, and a messaging system."
 arch=('x86_64')
 url="https://wiki.freedata.app"
-license=('GPL3.0')
+license=('GPL-3.0')
 depends=('python-fastapi'
 	'python-structlog'
 	'python-sounddevice')
@@ -47,8 +47,8 @@ package() {
 	cd ${pkgdir}
 	mkdir -p "usr/bin"
 	mkdir -p "opt/FreeDATA"
-	mkdir -p "usr/share/doc/${pkgname}"
-	mkdir -p "usr/share/licenses"
+	mkdir -p "usr/share/doc"
+	mkdir -p "usr/share/licenses/${pkgname}"
 	mkdir -p "usr/share/applications"
 	mkdir -p "usr/share/icons/hicolor/192x192/apps"
 
@@ -65,6 +65,10 @@ package() {
 
 	# Copy desktop link
 	cp ${srcdir}/FreeDATA.desktop ${pkgdir}/usr/share/applications/
+
+	# Copy License and documentation
+	cp ${srcdir}/FreeDATA-${pkgver}/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/
+	cp -a ${srcdir}/FreeDATA-${pkgver}/documentation ${pkgdir}/usr/share/doc/${pkgname}
 
 	install -m 755 ${srcdir}/freedata.sh ${pkgdir}/usr/bin/freedata
 }
