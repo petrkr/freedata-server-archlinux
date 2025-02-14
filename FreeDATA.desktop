@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=FreeDATA
+Comment=Amateur Radio Software
+Terminal=true
+Icon=FreeDATA
+Exec=/usr/bin/freedata
+Type=Application
+Categories=AudioVideo;Audio;HamRadio;
+StartupNotify=true

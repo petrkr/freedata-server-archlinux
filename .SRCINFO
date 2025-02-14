@@ -1,0 +1,23 @@
+pkgbase = freedata-server
+	pkgdesc = FreeDATA is a versatile, open-source platform designed specifically for HF communications, leveraging Codec2 data modes for robust global digital communication. It features a network-based server-client architecture, a REST API, multi-platform compatibility, and a messaging system.
+	pkgver = 0.16.9
+	pkgrel = 1
+	url = https://wiki.freedata.app
+	install = freedata.install
+	arch = x86_64
+	license = GPL3.0
+	depends = python-fastapi
+	depends = python-structlog
+	depends = python-sounddevice
+	source = freedata.install
+	source = FreeDATA.desktop
+	source = freedata.sh
+	source = https://github.com/DJ2LS/FreeDATA/archive/refs/tags/v0.16.9.tar.gz
+	source = https://github.com/drowe67/codec2/archive/ff00a6e2489f870abb10117ff5bf4b0a64bf05d4.zip
+	sha256sums = 0c2a75baa39459fa56159e982d9f28c966837561bd52dffd24bac87b8d65555f
+	sha256sums = 3fe415e43c909c21af1128cf2b5892d9ee3c2f39557644b228432f5d6e62da8a
+	sha256sums = b15822316d9f80d2c1da64f48c7f01cec9c5ea126141cc3159d6d59aa325961c
+	sha256sums = 962b393492fd158acf7d41d9211aa24409b98fe1fb0b96ae89e9b919d583d711
+	sha256sums = 40ede4f9240d6082c49483ccfa6a7f616c09d52a3715bd837f30563301c45e42
+
+pkgname = freedata-server
