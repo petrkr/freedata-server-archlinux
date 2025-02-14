@@ -17,7 +17,8 @@ depends=('uvicorn'
 	'python-fastapi'
 	'python-structlog'
 	'python-sounddevice')
-
+optdepends=('freedata-gui: Add Web based GUI interface for server'
+	'hamlib: Can use local RIG control')
 install=freedata.install
 makedepends=('cmake'
 	'make'
