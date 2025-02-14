@@ -7,11 +7,22 @@ pkgdesc="FreeDATA is a versatile, open-source platform designed specifically for
 arch=('x86_64')
 url="https://wiki.freedata.app"
 license=('GPL-3.0')
-depends=('python-fastapi'
+depends=('uvicorn'
+	'python-pyserial'
+	'python-numpy'
+	'python-psutil'
+	'python-sqlalchemy'
+	'python-requests'
+	'python-websocket-client'
+	'python-fastapi'
 	'python-structlog'
 	'python-sounddevice')
+
 install=freedata.install
-makedepends=()
+makedepends=('cmake'
+	'make'
+	'gcc')
+
 _codec2_commit="ff00a6e2489f870abb10117ff5bf4b0a64bf05d4"
 source=("freedata.install"
 	"FreeDATA.desktop"
