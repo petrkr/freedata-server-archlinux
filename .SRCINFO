@@ -1,5 +1,5 @@
 pkgbase = freedata-server
-	pkgdesc = FreeDATA is a versatile, open-source platform designed specifically for HF communications, leveraging Codec2 data modes for robust global digital communication. It features a network-based server-client architecture, a REST API, multi-platform compatibility, and a messaging system.
+	pkgdesc = FreeDATA is an open-source HF communication platform using Codec2 data modes for global digital messaging. It offers a server-client architecture, REST API and a messaging system.
 	pkgver = 0.16.9
 	pkgrel = 1
 	url = https://wiki.freedata.app

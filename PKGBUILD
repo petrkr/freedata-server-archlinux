@@ -3,7 +3,7 @@
 pkgname=freedata-server
 pkgver=0.16.9
 pkgrel=1
-pkgdesc="FreeDATA is a versatile, open-source platform designed specifically for HF communications, leveraging Codec2 data modes for robust global digital communication. It features a network-based server-client architecture, a REST API, multi-platform compatibility, and a messaging system."
+pkgdesc="FreeDATA is an open-source HF communication platform using Codec2 data modes for global digital messaging. It offers a server-client architecture, REST API and a messaging system."
 arch=('x86_64')
 url="https://wiki.freedata.app"
 license=('GPL-3.0')
