@@ -1,7 +1,7 @@
 # Maintainer: Petr Kracik <petrkr@petrkr.net>
 
 pkgname=freedata-server
-pkgver=0.16.11
+pkgver=0.17.3
 pkgrel=1
 pkgdesc="FreeDATA is an open-source HF communication platform using Codec2 data modes for global digital messaging. It offers a server-client architecture, REST API and a messaging system."
 arch=('x86_64')
@@ -28,13 +28,13 @@ _codec2_commit="ff00a6e2489f870abb10117ff5bf4b0a64bf05d4"
 source=("freedata.install"
 	"FreeDATA.desktop"
 	"freedata.sh"
-	"https://github.com/DJ2LS/FreeDATA/archive/refs/tags/v${pkgver}.tar.gz"
+	"https://github.com/DJ2LS/FreeDATA/archive/refs/tags/v${pkgver}-beta.tar.gz"
 	"https://github.com/drowe67/codec2/archive/${_codec2_commit}.zip")
 
 sha256sums=('7d9b5e2cca9c7f2ee2c6beada910c0e0e0362879a10cba671e9a80247456af1d'
             '3fe415e43c909c21af1128cf2b5892d9ee3c2f39557644b228432f5d6e62da8a'
             'f6c2ab5e77ae21306337094eda4f4d4c251845a4152b50a3938750fccacd61c4'
-            'f7485e5bd45cd3fa99205bfde6f36314fddb1d7f566fde62da09a609f394272b'
+            '322d31d10d4a8e676769ebdfcb78004916de35f020ff56b96d1d2c0ddd7fddbc'
             '40ede4f9240d6082c49483ccfa6a7f616c09d52a3715bd837f30563301c45e42')
 
 
@@ -49,7 +49,7 @@ build() {
 	cmake ..
 	make codec2 -j4
 	cd ../../
-	cd FreeDATA-${pkgver}/freedata_server
+	cd FreeDATA-${pkgver}-beta/freedata_server
 	python3 -m compileall .
 	rm -r lib/codec2
 	cd ../freedata_gui
@@ -68,20 +68,20 @@ package() {
 	cd ${pkgdir}/opt/FreeDATA
 	
 	# Copy server
-	cp -a ${srcdir}/FreeDATA-${pkgver}/freedata_server ./
+	cp -a ${srcdir}/FreeDATA-${pkgver}-beta/freedata_server ./
 	
 	# Copy own codec2
 	cp ${srcdir}/codec2-${_codec2_commit}/build/src/libcodec2.so* ./freedata_server/lib/
 
 	# Copy desktop icon
-	cp ${srcdir}/FreeDATA-${pkgver}/freedata_gui/public/android-chrome-192x192.png ${pkgdir}/usr/share/icons/hicolor/192x192/apps/FreeDATA.png
+	cp ${srcdir}/FreeDATA-${pkgver}-beta/freedata_gui/public/android-chrome-192x192.png ${pkgdir}/usr/share/icons/hicolor/192x192/apps/FreeDATA.png
 
 	# Copy desktop link
 	cp ${srcdir}/FreeDATA.desktop ${pkgdir}/usr/share/applications/
 
 	# Copy License and documentation
-	cp ${srcdir}/FreeDATA-${pkgver}/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/
-	cp -a ${srcdir}/FreeDATA-${pkgver}/documentation ${pkgdir}/usr/share/doc/${pkgname}
+	cp ${srcdir}/FreeDATA-${pkgver}-beta/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/
+	cp -a ${srcdir}/FreeDATA-${pkgver}-beta/documentation ${pkgdir}/usr/share/doc/${pkgname}
 
 	install -m 755 ${srcdir}/freedata.sh ${pkgdir}/usr/bin/freedata
 }
